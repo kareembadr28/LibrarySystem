@@ -15,16 +15,16 @@ namespace LibrarySystem.Models
         public int bookId { get; set; }
         public Book book { get; set; }
 
-        [ForeignKey("user")]
-        public int userId { get; set; }
-        public User user { get; set; }
+        [ForeignKey("customer")]
+        public int customerId { get; set; }
+        public Customer customer { get; set; }
 
-        public Borrow(DateTime borrowDate, int bookId, int userId)
+        public Borrow(DateTime borrowDate, int bookId, int customerId)
         {
             this.borrowDate = borrowDate;
             this.status = BorrowStatus.Borrowed;
             this.bookId = bookId;
-            this.userId = userId;
+            this.customerId = customerId;
         }
 
         public Borrow()

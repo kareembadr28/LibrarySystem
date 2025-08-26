@@ -11,19 +11,19 @@ namespace LibrarySystem.Models
         public int bookId { get; set; }
         public Book book { get; set; }
 
-        [ForeignKey("user")]
-        public int userId { get; set; }
-        public User user { get; set; }
+        [ForeignKey("customer")]
+        public int customerId { get; set; }
+        public Customer customer { get; set; }
 
         public Purchase()
         {
         }
 
-        public Purchase(DateTime purchaseDate, int bookId, int userId)
+        public Purchase(DateTime purchaseDate, int bookId, int customerId)
         {
             this.purchaseDate = purchaseDate;
             this.bookId = bookId;
-            this.userId = userId;
+            this.customerId = customerId;
         }
     }
 }
