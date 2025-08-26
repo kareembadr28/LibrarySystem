@@ -15,6 +15,7 @@ namespace LibrarySystem
             builder.Services.AddControllers();
             builder.Services.AddDbContext<Context>(
                 options => options.UseSqlServer(builder.Configuration.GetConnectionString("DB"))
+                .LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information)
                 );
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
