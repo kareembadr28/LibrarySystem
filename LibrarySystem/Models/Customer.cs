@@ -13,8 +13,8 @@ namespace LibrarySystem.Models
         public Customer() : base()
         {
         }
-        ICollection<Borrow> Borrows { get; set; } = new HashSet<Borrow>();
-        ICollection<Purchase> Purchase { get; set; } = new HashSet<Purchase>();
+       public ICollection<Borrow> Borrows { get; set; } = new HashSet<Borrow>();
+       public ICollection<Purchase> Purchase { get; set; } = new HashSet<Purchase>();
 
     }
 

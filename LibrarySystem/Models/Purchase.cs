@@ -2,6 +2,7 @@
 
 namespace LibrarySystem.Models
 {
+    [Table("Purchases")]
     public class Purchase
     {
         public int Id { get; set; }

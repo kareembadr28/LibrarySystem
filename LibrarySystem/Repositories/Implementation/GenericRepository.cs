@@ -2,12 +2,12 @@
 using LibrarySystem.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace LibrarySystem.Repositories
+namespace LibrarySystem.Repositories.Interfaces
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private readonly Context _context;
-        private readonly DbSet<T> _dbSet;
+        protected Context _context;
+        protected DbSet<T> _dbSet;
         public GenericRepository(Context context)
         {
             _context = context;

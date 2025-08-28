@@ -9,7 +9,7 @@ namespace LibrarySystem.Models
         public string fullName { get; set; }
         public string bio { get; set; }
 
-        ICollection<Book> Books { get; set; }=new HashSet<Book>();
+       public ICollection<Book> Books { get; set; }=new HashSet<Book>();
 
         public Author(string fullName, string bio)
         {

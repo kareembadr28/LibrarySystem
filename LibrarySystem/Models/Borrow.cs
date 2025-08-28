@@ -3,13 +3,14 @@ using LibrarySystem.Enums;
 
 namespace LibrarySystem.Models
 {
+    [Table("Borrows")]
     public class Borrow
     {
         public int Id { get; set; }
-        public DateTime borrowDate { get; set; }
+        public DateTime borrowDate { get; set; } = DateTime.UtcNow;
         public DateTime? returnDate { get; set; }
 
-        public BorrowStatus status { get; set; }
+        public BorrowStatus status { get; set; } = BorrowStatus.Borrowed;
 
         [ForeignKey("book")]
         public int bookId { get; set; }

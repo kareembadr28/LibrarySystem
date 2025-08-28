@@ -5,7 +5,7 @@ namespace LibrarySystem.Models
     [Table("Publishers")]
     public class Publisher
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public string name { get; set; }
         public string address { get; set; }
         public string contactEmail { get; set; }

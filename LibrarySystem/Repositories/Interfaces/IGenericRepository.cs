@@ -1,4 +1,4 @@
-﻿namespace LibrarySystem.Repositories
+﻿namespace LibrarySystem.Repositories.Interfaces
 {
     public interface IGenericRepository<T> where T : class
     {
