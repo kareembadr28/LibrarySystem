@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LibrarySystem.Repositories.Implementation
 {
-    public class AdminRepository : GenericRepository<Admin>, IAdminRepositorycs
+    public class AdminRepository : GenericRepository<Admin>, IAdminRepository
     {
         public AdminRepository(Context context) : base(context)
         {
