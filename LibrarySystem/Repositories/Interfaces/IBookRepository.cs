@@ -17,8 +17,7 @@ namespace LibrarySystem.Repositories.Interfaces
         Task<Book?> GetWithBorrowsAndPurchasesAsync(int bookId);
 
         Task<bool> IsInStockAsync(int bookId);
-        Task DecreaseStockAsync(int bookId, int quantity);
-        Task IncreaseStockAsync(int bookId, int quantity);
+     
 
         Task<IEnumerable<Book>> SearchAsync(string searchTerm);
         Task<IEnumerable<Book>> GetByPublishedDateRangeAsync(DateTime first,DateTime second);

@@ -11,21 +11,6 @@ namespace LibrarySystem.Repositories.Implementation
         {
         }
 
-        public async Task DecreaseStockAsync(int bookId, int quantity)
-        {
-           var book = await _context.Books.FindAsync(bookId);
-            if (book == null)
-            { 
-            throw new KeyNotFoundException("Book not found");
-            }
-            else if(book.stock < quantity)
-            {
-                throw new InvalidOperationException("Not enough stock available");
-            }
-            book.stock -= quantity;
-           
-        }
-
         public async Task<IEnumerable<Book>> GetBooksByAuthorAsync(int authorId)
         {
             return await _context.Books.Where(b=>b.authorId == authorId).ToListAsync();
@@ -79,16 +64,6 @@ namespace LibrarySystem.Repositories.Implementation
         public async Task<Book?> GetWithPublishersAsync(int bookId)
         {
            return await _context.Books.Include(b => b.publishers).FirstOrDefaultAsync(b => b.Id == bookId);
-        }
-
-        public async Task IncreaseStockAsync(int bookId, int quantity)
-        {
-            var book = await _context.Books.FindAsync(bookId);
-            if(book == null)
-            {
-                throw new KeyNotFoundException("Book not found");
-            }
-            book.stock += quantity;
         }
 
         public async Task<bool> IsInStockAsync(int bookId)
