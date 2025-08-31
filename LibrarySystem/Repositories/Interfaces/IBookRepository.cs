@@ -2,7 +2,7 @@
 
 namespace LibrarySystem.Repositories.Interfaces
 {
-    public interface IBookRepository
+    public interface IBookRepository : IGenericRepository<Book>
     {
         Task<Book?> GetByISBNAsync(string isbn);
         Task<Book?> GetByTitleAsync(string title);

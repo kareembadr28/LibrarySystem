@@ -2,7 +2,7 @@
 
 namespace LibrarySystem.Repositories.Interfaces
 {
-    public interface IPurchaseRepository
+    public interface IPurchaseRepository : IGenericRepository<Purchase>
     {
         Task<IEnumerable<Purchase>> GetPurchasesByCustomerAsync(int customerId);
         Task<IEnumerable<Purchase>> GetPurchasesByBookAsync(int bookId);

@@ -2,7 +2,7 @@
 
 namespace LibrarySystem.Repositories.Interfaces
 {
-    public interface IBorrowRepository
+    public interface IBorrowRepository : IGenericRepository<Borrow>
     {
         Task<IEnumerable<Borrow>> GetBorrowsByUserIdAsync(int userId);
 

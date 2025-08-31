@@ -2,7 +2,7 @@
 
 namespace LibrarySystem.Repositories.Interfaces
 {
-    public interface IAuthorRepository
+    public interface IAuthorRepository : IGenericRepository<Author>
     {
         public Task<Author> GetByFullName(string fullName);
         public Task<Author> GetWithhBooks(int id);

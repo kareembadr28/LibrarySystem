@@ -18,13 +18,11 @@ namespace LibrarySystem.Repositories.Interfaces
 
 
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(T entity)
         {
-            var entity = await GetByIdAsync(id);
-            if (entity != null)
-            {
+            
                 _dbSet.Remove(entity);
-            }
+            
         }
 
 
