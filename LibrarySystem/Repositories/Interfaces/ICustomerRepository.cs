@@ -1,8 +1,7 @@
 ﻿using LibrarySystem.Models;
-
 namespace LibrarySystem.Repositories.Interfaces
 {
-    public interface ICustomerRepository
+    public interface ICustomerRepository:IGenericRepository<Customer>
     {
         public Task<bool> IsExist(string username);
         public Task<Customer> getByUserNameAsync(string username);
