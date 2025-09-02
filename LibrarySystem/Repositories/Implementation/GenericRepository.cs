@@ -18,12 +18,11 @@ namespace LibrarySystem.Repositories.Interfaces
 
 
 
-        public async Task DeleteAsync(T entity)
+        public void Delete(T entity)
         {
-            
-                _dbSet.Remove(entity);
-            
+            _dbSet.Remove(entity);
         }
+
 
 
 

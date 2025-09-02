@@ -17,7 +17,7 @@ namespace LibrarySystem.Services.Implementations
             var user = await userRepository.GetByIdAsync(id);
             if (user == null)
                 return false;
-            await userRepository.DeleteAsync(user);
+             userRepository.Delete(user);
             await userRepository.SaveChangesAsync();
             return true;
 

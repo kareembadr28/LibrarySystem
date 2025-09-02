@@ -12,7 +12,7 @@ namespace LibrarySystem.Services.Implementations
         private readonly ICategoryRepository categoryRepository;
         public CategoryService(ICategoryRepository categoryRepository)
         {
-            categoryRepository = categoryRepository;
+            this.categoryRepository = categoryRepository;
         }
         public async Task<CategoryDto> CreateCategoryAsync(CategoryDto dto)
         {
@@ -34,7 +34,7 @@ namespace LibrarySystem.Services.Implementations
             var categoryWithBooks = await categoryRepository.GetWithBooksAsync(id);
             if (categoryWithBooks != null && categoryWithBooks.Books.Any())
                 throw new CategoryHasBooksException("Cannot delete category with associated books");
-            await categoryRepository.DeleteAsync(category);
+             categoryRepository.Delete(category);
             await categoryRepository.SaveChangesAsync();
 
             return true;

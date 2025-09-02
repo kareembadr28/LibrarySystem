@@ -62,7 +62,7 @@ namespace LibrarySystem.Services.Implementations
                 book.stock += 1;
                 bookRepository.Update(book);
             }
-            await purchaseRepository.DeleteAsync(purchase);
+             purchaseRepository.Delete(purchase);
             await purchaseRepository.SaveChangesAsync();
 
         }

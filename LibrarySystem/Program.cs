@@ -49,7 +49,7 @@ namespace LibrarySystem
 
             app.UseAuthorization();
 
-            app.UseExceptionHandler();  
+            app.UseExceptionHandler(_ => { });
 
 
             app.MapControllers();

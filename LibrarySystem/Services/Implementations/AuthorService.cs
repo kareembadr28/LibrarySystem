@@ -38,7 +38,7 @@ namespace LibrarySystem.Services.Implementations
                 throw new AuthorNotFoundException("this author is not exist");
             if(author.Books!=null&&author.Books.Any())
                 throw new AuthorHasBooksException("this author has books you cant delete it");
-            await authorRepository.DeleteAsync(author);
+             authorRepository.Delete(author);
 
         }
 

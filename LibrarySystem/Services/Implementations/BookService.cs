@@ -76,7 +76,7 @@ namespace LibrarySystem.Services.Implementations
             var book =await bookRepository.GetByIdAsync(bookId);
             if (book == null)
                 throw new BookNotFoundException("Book not found");
-           await bookRepository.DeleteAsync(book);
+            bookRepository.Delete(book);
             await bookRepository.SaveChangesAsync();
             return true;
         }

@@ -39,7 +39,7 @@ namespace LibrarySystem.Services.Implementations
                 throw new PublisherNotFoundException("Publisher not found");
             if(publisher.Books.Any())
                 throw new PublisherHasBooksException("Cannot delete publisher with associated books.");
-            await publisherRepository.DeleteAsync(publisher);
+             publisherRepository.Delete(publisher);
             await publisherRepository.SaveChangesAsync();
 
         }
