@@ -28,7 +28,6 @@ namespace LibrarySystem
             builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
             builder.Services.AddScoped<IPublisherRepository, PublisherRepository>();
             builder.Services.AddScoped<IPurchaseRepository, PurchaseRepository>();
-            builder.Services.AddScoped<ISuperAdminRepository, SuperAdminRepository>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
