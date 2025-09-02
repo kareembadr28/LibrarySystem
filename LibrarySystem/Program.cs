@@ -1,5 +1,6 @@
 
 using LibrarySystem.Data;
+using LibrarySystem.Handler;
 using LibrarySystem.Repositories.Implementation;
 using LibrarySystem.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -33,6 +34,7 @@ namespace LibrarySystem
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 
             var app = builder.Build();
 
@@ -46,6 +48,8 @@ namespace LibrarySystem
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
+
+            app.UseExceptionHandler();  
 
 
             app.MapControllers();
