@@ -6,7 +6,7 @@ namespace LibrarySystem.Services.Interfaces
     {
         Task<BorrowDto> BorrowBookAsync(int customerId, int bookId);
 
-        Task<BorrowDto> ReturnBookAsync(int borrowId);
+        Task<ReturnBorrowDto> ReturnBookAsync(int borrowId);
 
         Task<IEnumerable<BorrowDto>> GetBorrowsByUserIdAsync(int userId);
 

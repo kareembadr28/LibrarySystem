@@ -146,7 +146,7 @@ namespace LibrarySystem.Services.Implementations
             return ans;
         }
 
-        public async Task<BorrowDto> ReturnBookAsync(int borrowId)
+        public async Task<ReturnBorrowDto> ReturnBookAsync(int borrowId)
         {
             var borrow =await borrowRepository.GetByIdAsync(borrowId);
             if (borrow == null)
@@ -160,13 +160,14 @@ namespace LibrarySystem.Services.Implementations
             book.stock += 1;
             bookRepository.Update(book);
             await borrowRepository.SaveChangesAsync();
-            return new BorrowDto
+            return new ReturnBorrowDto
             {
-                bookId = borrow.bookId,
-                customerId = borrow.customerId,
+                bookTitle = book.title,
+                customerName = borrow.customer.username,
                 borrowDate = borrow.borrowDate,
                 returnDate = borrow.returnDate,
-                status = borrow.status.ToString()
+                status = borrow.status.ToString(),
+                fine = await CalculateFineAsync(borrowId)
             };
 
         }
