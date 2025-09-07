@@ -24,6 +24,7 @@ namespace LibrarySystem.Services.Implementations
                 Books = new HashSet<Book>()
             };
           await authorRepository.AddAsync(author);
+         await authorRepository.SaveChangesAsync();
             return new BasicAuthorDto
             {
                 Biography = dto.Biography,
@@ -39,6 +40,8 @@ namespace LibrarySystem.Services.Implementations
             if(author.Books!=null&&author.Books.Any())
                 throw new AuthorHasBooksException("this author has books you cant delete it");
              authorRepository.Delete(author);
+            await authorRepository.SaveChangesAsync();
+
 
         }
 

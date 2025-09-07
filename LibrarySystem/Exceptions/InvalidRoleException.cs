@@ -8,6 +8,4 @@ namespace LibrarySystem.Exceptions
         {
         }
     }
-    {
-    }
 }
