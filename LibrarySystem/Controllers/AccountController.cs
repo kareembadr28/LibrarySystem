@@ -30,8 +30,6 @@ namespace LibrarySystem.Controllers
             return Ok(new ApiResponse(true, "User logged in successfully", result));
         }
 
-      
-        
 
     }
 }
