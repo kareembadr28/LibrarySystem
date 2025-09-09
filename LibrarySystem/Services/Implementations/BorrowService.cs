@@ -152,7 +152,7 @@ namespace LibrarySystem.Services.Implementations
             if (borrow == null)
                 throw new BorrowNotFoundException("Borrow record not found");
             if (borrow.status == BorrowStatus.Returned)
-                throw new InvalidOperationException("Book already returned");
+                throw new BorrowAlreadyReturnedException("Book already returned");
             borrow.status = BorrowStatus.Returned;
             borrow.returnDate = DateTime.UtcNow;
             borrowRepository.Update(borrow);
