@@ -284,10 +284,15 @@ namespace LibrarySystem.Services.Implementations
             var existing = await bookRepository.GetByIdAsync(book.Id);
             if (existing == null)
                 throw new BookNotFoundException("Book not found");
+            existing.title = book.title;
+            existing.iSBN = book.iSBN;
+            existing.price = book.price;
+            existing.stock = book.stock;
+            existing.publishedDate = book.publishedDate;
 
-            bookRepository.Update(book);
+            bookRepository.Update(existing);
             await bookRepository.SaveChangesAsync();
-            return book;
+            return existing;
         }
 
     }
