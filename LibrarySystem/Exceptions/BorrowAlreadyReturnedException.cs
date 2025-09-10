@@ -1,4 +1,6 @@
-﻿namespace LibrarySystem.Exceptions
+﻿using System.Net;
+
+namespace LibrarySystem.Exceptions
 {
     public class BorrowAlreadyReturnedException : BaseException
     {
