@@ -163,7 +163,7 @@ namespace LibrarySystem.Services.Implementations
             return new ReturnBorrowDto
             {
                 bookTitle = book.title,
-                customerName = borrow.customer.username,
+                customerName = borrow.customerId.ToString(),
                 borrowDate = borrow.borrowDate,
                 returnDate = borrow.returnDate,
                 status = borrow.status.ToString(),
